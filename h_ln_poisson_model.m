@@ -15,7 +15,7 @@ rate = exp(u);
 reg_w = 5e1;
 
 % Start computing the Hessian
-rX = bsxfun(@times,rate,X);       
+rX = bsxfun(@times,rate,X);
 hessian_glm = rX'*X;
 
 %% Find parameters and compute their roughness penalties
@@ -30,7 +30,7 @@ end
 
 % Compute the contribution for f, df, and the hessian
 for l = 1:length(params_found)
-    if ~isempty(params_found(l))
+    if ~isempty(cell2mat(params_found(l)))
 
         if (ln_params_dims{l}) == "1d"
             [J{l},J_g{l},J_h{l}] = rough_penalty_1d(cell2mat(params_found(l)),reg_w);
