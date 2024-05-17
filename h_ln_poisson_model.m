@@ -47,8 +47,8 @@ end
 
 %% Compute f, the gradient, and the hessian 
 f = sum(rate-Y.*u) + sum(cell2mat(J));
-df = real(X' * (rate - Y) + [J_g{1}; J_g{2}; J_g{3}; J_g{4}]);
-hessian = hessian_glm + blkdiag(J_h{1}; J_h{2}; J_h{3}; J_h{4});
+df = real(X' * (rate - Y) + vertcat(J_g{1:end}));
+hessian = hessian_glm + blkdiag(J_h{1:end});
 
 %% Local functions called in the above script
 % Find the right parameters given the model type
