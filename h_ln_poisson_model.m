@@ -64,7 +64,13 @@ function [params_found] = find_param(params,modelType,ln_params)
         if l == 1
             start_idx = 1;
         else
-            start_idx = 1+sum(ln_params(1:(l-1)));
+            validsum = 0;
+            for m=1:(l-1)
+                if (modelType(m))
+                    validsum = validsum + ln_params(m);
+                end
+            end
+            start_idx = 1+validsum;
         end
         end_idx = start_idx+ln_params(l)-1;
         if (modelType(l))
