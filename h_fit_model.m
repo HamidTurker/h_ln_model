@@ -1,5 +1,8 @@
 function [testFit,trainFit,param_mean] = h_fit_model(A,dt,spiketrain,filter,modelType,numFolds,ln_params)
 
+%% @ HBT - 2024 May 16
+%    Adjusted the original code to allow for flexible number of parameters
+
 %% Description
 % This code will section the data into 10 different portions. Each portion
 % is drawn from across the entire recording session. It will then
