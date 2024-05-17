@@ -1,4 +1,4 @@
-function [testFit,trainFit,param_mean] = h_fit_model(A,dt,spiketrain,filter,modelType,numFolds,ln_params)
+function [testFit,trainFit,param_mean] = h_fit_model(A,dt,spiketrain,filter,modelType,numFolds,ln_params,ln_params_dims)
 
 %% @ HBT - 2024 May 16
 %    Adjusted the original code to allow for flexible number of parameters
